@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="theme/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="theme/bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="theme/dist/css/AdminLTE.min.css">
+
+  <link rel="stylesheet" href="theme/dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <style type="text/css">
+    .doCall {
+      background-color: green;
+      color: white;
+      border-radius: 50%;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body class="hold-transition skin-blue layout-top-nav" style="width:350px;">
+<div class="wrapper">
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+        <a href="#" class="navbar-brand"><b>SIP</b> Phone</a>
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+            <li class="dropdown user user-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-dot-circle-o" id="register"></i>
+                <span class="register_status">Unregistered</span>
+              </a>
+            </li>
+            <li class="dropdown messages-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <i class="fa fa fa-gears"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <ul class="menu">
+                  <li>
+                    <a href="#" class="logout">
+                    <div class="pull-left">
+                        <img src="ext_icons/user.png" class="img-circle" alt="User Image">
+                      </div>
+                      <h4 id="user_ext_num"></h4>
+                      <p class="sip_uri"></p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-black" data-toggle="modal" data-target="#call_assistant">
+                      <i class="fa fa-phone-square"></i> Call Assistant
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="footer about_us"><a href="#" data-toggle="modal" data-target="#about_us">About</a></li>
+            </ul>
+          </li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="content-wrapper">
+    <section class="content dialpad">
+        <div class="box box-danger">
+            <div class="box-header with-border">
+                <h3 class="box-title"><div class="input-group">
+                <input type="text" class="form-control external_txt" placeholder="Enter Number" id="phone_number" autocomplete="off" autofocus>
+                    <span class="input-group-addon btn clear_number"><i class="fa fa-close"></i></span>
+                </div>
+                </h3>
+            </div>
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="col-xs-4 text-center">
+                            <span class="btn btn-flat dialpad_btn btn-lg" data-dialpad="1">1</span>
+                        </div>
+                        <div class="col-xs-4 text-center">
+                            <span class="btn btn-flat dialpad_btn btn-lg" data-dialpad="2">2<span class="users-list-date">ABC</span></span>
+                        </div>
+                        <div class="col-xs-4 text-center">
+                            <span class="btn btn-flat dialpad_btn btn-lg" data-dialpad="3">3<span class="users-list-date">DEF</span></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="col-xs-4 text-center">
+                            <span class="btn btn-flat dialpad_btn btn-lg" data-dialpad="4">4<span class="users-list-date">GHI</span></span>
+                        </div>
+                        <div class="col-xs-4 text-center">
+                            <span class="btn btn-flat dialpad_btn btn-lg" data-dialpad="5">5<span class="users-list-date">JKL</span></span>
+                        </div>
+                        <div class="col-xs-4 text-center">
+                            <span class="btn btn-flat dialpad_btn btn-lg" data-dialpad="6">6<span class="users-list-date">MNO</span></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="col-xs-4 text-center">
+                            <span class="btn btn-flat dialpad_btn btn-lg" data-dialpad="7">7<span class="users-list-date">PQRS</span></span>
+                        </div>
+                        <div class="col-xs-4 text-center">
+                            <span class="btn btn-flat dialpad_btn btn-lg" data-dialpad="8">8<span class="users-list-date">TUV</span></span>
+                        </div>
+                        <div class="col-xs-4 text-center">
+                            <span class="btn btn-flat dialpad_btn btn-lg" data-dialpad="9">9<span class="users-list-date">WXYZ</span></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="col-xs-4 text-center">
+                            <span class="btn btn-flat dialpad_btn btn-lg" data-dialpad="*">*</span>
+                        </div>
+                        <div class="col-xs-4 text-center">
+                            <span class="btn btn-flat dialpad_btn btn-lg" data-dialpad="0">0</span>
+                        </div>
+                        <div class="col-xs-4 text-center">
+                            <span class="btn btn-flat dialpad_btn btn-lg" data-dialpad="#">#</span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="col-xs-6 text-right">
+                          <i class="fa fa-2x fa-phone text-success doCall" style="cursor:pointer;padding-left: 13px; padding-right: 13px;" data-video="false"></i>
+                        </div>
+                        <div class="col-xs-4 text-left">
+                            <i class="fa fa-2x fa-video-camera text-success doCall" style="cursor:pointer;" data-video="true"></i>
+                        </div>
+                        <!-- <div class="col-xs-4"></div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  </div>
+</div>
+<div class="modal fade" id="about_us">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title"><b>SIP</b> Phone</h4>
+        </div>
+        <div class="modal-body">
+        <div class="box-group" id="accordion">
+                <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
+                <div class="panel box box-primary">
+                  <div class="box-header with-border">
+                    <h4 class="box-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" class="collapsed">
+                        About
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                    <div class="box-body">
+                      <b>SIP Phone is a WebRTC client.</b>
+                      <br>
+                      SIP Phone works using WebRTC & SIP protocol. It makes communication easy and cost-effective.
+                    </div>
+                  </div>
+                </div>
+                <div class="panel box box-success">
+                  <div class="box-header with-border">
+                    <h4 class="box-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed" aria-expanded="false">
+                        Developer
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseThree" class="panel-collapse collapse" aria-expanded="false">
+                    <div class="box-body">
+                      This awesome tool has been developed by Ghanshyam Katriya who is very passionate about his WebRTC related work. He spend more times in enhancing knowledge related WebRTC.
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="modal fade" id="call_assistant">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title"><b>Call</b> Assistant</h4>
+        </div>
+        <div class="modal-body">
+            <h5>Do Not Disturb</h5>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <input type="checkbox" class="do_not_disturb">
+                </span>
+                <input type="text" class="form-control" value="Enable Do Not Disturb" readonly>
+            </div>
+            <h5>Auto Answer Incoming Calls</h5>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <input type="checkbox" class="auto_answer">
+                </span>
+                <input type="text" class="form-control" value="Enable Auto Answer" readonly>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary save_call_assitant">Save</button>
+        </div>
+    </div>
+</div>
+<script src="theme/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="theme/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="theme/dist/js/adminlte.min.js"></script>
+<script src="theme/chrome/js/common.js"></script>
+</body>
+</html>

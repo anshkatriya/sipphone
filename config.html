@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="theme/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="theme/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="theme/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="gray-bg">
+<div class="login-box" style="width : 55%; margin : auto; top : 15%; position : absolute; left : 25%;">
+<div class="login-box-body">
+    <div class="loginColumns animated fadeInDown">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="font-bold">Welcome to SIP Phone</h2>
+                <p>
+                    SIP Phone is an WebRTC client which works using WebRTC & SIP protocol. You can use it in place of Soft (VoIP) Phone. It makes communication easy and cost-effective.
+                </p>
+                <p>
+                    Key Features : <br>
+                        <b>Call Type :</b> Audio Call, Video Call<br/>
+                        <b>Call Assistant :</b> Do not Disturb, Auto Answer Incoming Calls,</br>
+<!--                         <b>Click2Call Dial</b> (Select any number and right click, you will get option to Dial with SIP Phone)
+                        <br> -->
+                        <b>Call Features :</b> Hold/Unhold, Mute/Unmute, Blind Transfer
+                </p>
+                <p>
+                    We would love to keep udpated this extension. Also, we wants to add some features which will helps you a lot. If you have any query/feedback/suggestions, you can directly reach to me on <br>
+                    <b><i class="fa fa-envelope"></i></b> anshkatriya@gmail.com
+                    <b><i class="fa fa-skype"></i></b> ghanshyam.katriya<br>
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <div class="ibox-content">
+                    <div class="login-box-body" id="login">
+                        <div id="statusMsg"></div>
+                        <div class="form-group has-feedback">
+                            <input type="text" class="form-control" id="display_name" placeholder="Display Name">
+                        </div>
+                        <div class="form-group has-feedback">
+                            <input type="text" class="form-control" id="auth_user" placeholder="Auth User">
+                        </div>
+                        <div class="form-group has-feedback">
+                            <input type="password" class="form-control" id="sip_password" placeholder="SIP Password">
+                        </div>
+                        <div class="form-group has-feedback">
+                            <input type="text" class="form-control" id="sip_server" placeholder="SIP Server (sip.domain.com)">
+                        </div>
+                        <div class="form-group has-feedback">
+                            <input type="text" class="form-control"  id="wss_server" placeholder="WSS/Proxy Server (wss://sip.domain.com:7443)">
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                            <a href="https://paypal.me/anshkatriya" target="_blank" class="btn btn-danger btn-flat pull-left donation">Donate from your <i class="fa fa-heart"></i></a>
+                            <button type="submit" class="btn btn-primary btn-flat pull-right" id="add_account">Add Account</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="login-box-body" id="user_detail" style="display:none;">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3 class="text-center"><i class="fa fa-user"></i></h3>
+                                <h3 class="profile-username text-center" id="user_display_name"></h3>
+                                <p class="text-muted text-center"  id="user_auth_name"></p>
+                                <ul class="list-group list-group-unbordered">
+                                <li class="list-group-item">
+                                    <b>SIP Server</b> <a class="pull-right" id="user_sip_server"></a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>WSS/Proxy Server</b> <a class="pull-right" id="user_wss_server">wss://sip.com:7443</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Media Access</b> <a class="pull-right text-danger" id="doTest_media">Blocked</a>
+                                </li>
+                                </ul>
+                                <button href="#" class="btn btn-danger btn-block" id="remove_account">Remove Account</button>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="m-t">
+                        <small>Kindly keep donating from your heart to keep motivating us.</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-6">
+                Copyright &copy; 2020. Made with <i class="fa fa-heart text-danger"></i> by <a href="https://ghanshyam.xyz">Ghanshyam Katriya</a>.
+            </div>
+            <div class="col-md-6 text-right">
+               <small>V <span id="manifest_verion">1.0.0</span></small>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<script src="theme/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="theme/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="theme/chrome/js/config.js"></script>
+</body>
+</html>

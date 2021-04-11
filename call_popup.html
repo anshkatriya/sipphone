@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="theme/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="theme/bower_components/bootstrap/dist/css/bootstrap-reset.css" rel="stylesheet">
+    <link href="theme/bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="theme/dist/css/qb_styles.css">
+    <style>
+        body {
+            overflow: hidden;
+        }
+        .twt-footer {
+            /*                 display : none; */
+        }
+        .twt-footer>button {
+            margin: 2px;
+        }
+        #dtmf_box>button {
+            padding: 6px 11px;
+        }
+        .header {
+            background: transparent;
+        }
+        .wrapper {
+            margin-top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper j-wrapper">
+        <header class="header">
+            <div class="inner">
+                <h2 class="header__title header__logo" style="float: left; font-weight: 400">
+                    SIP Phone
+                </h2>
+                <h2 class="header__title" id="active_call_duration">00:00:00</h2>
+            </div>
+        </header>
+        <main class="app" id="app">
+            <div class="page page-dashboard">
+                <div class="dashboard j-dashboard">
+                    <div class="state_board j-state_board">
+                        <div class="inner call_state_status">
+                        </div>
+                        <div id="transfer_box" class="inner" style="display:none;">
+                            <input type="text" class="form-control" placeholder="Enter number" id="trans_to" style="width:90%; float : left; margin-right : 2px;">
+                            <button class="btn btn-white" id="transfer_button"><i class="fa fa-mail-forward"></i></button>
+                        </div>
+                        <div id="dtmf_box" class="inner" style="display:none;">
+                            <button class="btn btn-white dtmtBtn" data-val="1">1</button>
+                            <button class="btn btn-white dtmtBtn" data-val="2">2</button>
+                            <button class="btn btn-white dtmtBtn" data-val="3">3</button>
+                            <button class="btn btn-white dtmtBtn" data-val="4">4</button>
+                            <button class="btn btn-white dtmtBtn" data-val="5">5</button>
+                            <button class="btn btn-white dtmtBtn" data-val="6">6</button>
+                            <button class="btn btn-white dtmtBtn" data-val="7">7</button>
+                            <button class="btn btn-white dtmtBtn" data-val="8">8</button>
+                            <button class="btn btn-white dtmtBtn" data-val="9">9</button>
+                            <button class="btn btn-white dtmtBtn" data-val="*">*</button>
+                            <button class="btn btn-white dtmtBtn" data-val="0">0</button>
+                            <button class="btn btn-white dtmtBtn" data-val="#">#</button>
+                        </div>
+                    </div>
+                    <div class="dashboard__inner inner">
+                        <div class="board clearfix j-board">
+                            <div class="frames">
+                                <div class="frames__main">
+                                    <div class="frames__main_timer invisible" id="timer">
+                                    </div>
+                                    <div class="qb-video">
+                                        <video id="remoteVideo" class="frames__main_v qb-video_source no" muted autoplay></video>
+                                    </div>
+                                </div>
+                                <div class="frames__callees j-callees"></div>
+                            </div>
+                            <div class="caller">
+                                <div class="caller__ctrl answerCallState" style="display: none;">
+                                    <button class="caller__ctrl_btn audio j-actions" id="answerCallState">
+                                        <i class="fa fa-phone"></i> Accept
+                                    </button>
+                                    <button class="caller__ctrl_btn video j-actions" id="videoCallState">
+                                        <i class="fa fa-video-camera"></i> Accept
+                                    </button>
+                                </div>
+                                <div class="caller__ctrl cancelCallState">
+                                    <button class="caller__ctrl_btn cancel j-actions" id="cancelCallState"></button>
+                                </div>
+                                <div class="caller__frames">
+                                    <div class="qb-video qbLocalvideo" style="display: none;">
+                                        <video id="localVideo" class="qb-video_source no" style="transform: scaleX(-1);" muted autoplay></video>
+                                    </div>
+                                    <div class="caller__frames_acts">
+                                        <footer class="twt-footer" style="padding-left:0px;width:108%;">
+                                            <button title="Dialpad" class="btn btn-white" id="dialpad">
+                                                <i class="fa fa-th"></i>
+                                            </button>
+                                            <button title="Hold" class="btn btn-white" id="holdCall">
+                                                <i class="fa fa-pause"></i>
+                                            </button>
+                                            <button title="Unhold" class="btn btn-white" id="unholdCall" style="display:none;">
+                                                <i class="fa fa-play"></i>
+                                            </button>
+                                            <button title="Mute" class="btn btn-white" id="muteCall">
+                                                <i class="fa fa-microphone-slash"></i>
+                                            </button>
+                                            <button title="Unmute" class="btn btn-white" id="unmuteCall" style="display:none;">
+                                                <i class="fa fa-microphone"></i>
+                                            </button>
+                                            <button title="Transfer" class="btn btn-white" id="transfer_call">
+                                                <i class="fa fa-mail-forward"></i>
+                                            </button>
+                                            <button title="Hangup" class="btn btn-danger" id="hangupCall">
+                                                <i class="fa fa-power-off"></i>
+                                            </button>
+                                        </footer>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/jquery.js">
+    </script>
+    <script src="theme/dist/js/callPopup.js">
+    </script>
+</body>
+</html>
